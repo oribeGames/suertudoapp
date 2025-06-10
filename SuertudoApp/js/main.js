@@ -18,14 +18,14 @@ function irARuleta() {
  * Redirige a la página de juego para el Número Aleatorio.
  */
 function generarNumero() {
-    window.location.href = gamePageURL;
+    window.location.href = '/html/numero_aleatorio.html';
 }
 
 /**
  * Redirige a la página de juego para el Selector desde Lista.
  */
 function seleccionarDeLista() {
-    window.location.href = gamePageURL;
+    window.location.href = '/html/selector_lista.html';
 }
 
 /**

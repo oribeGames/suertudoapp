@@ -419,3 +419,216 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* ======================================================= */
+/* === ESTILOS PARA LA PÁGINA DE NÚMERO ALEATORIO      === */
+/* ======================================================= */
+
+.numero-aleatorio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.controles-wrapper, .resultado-wrapper {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.controles-wrapper p, .resultado-wrapper p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.rango-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-primario);
+}
+
+.input-container input[type="number"] {
+    width: 120px;
+    padding: 12px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-container input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.generate-button {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.generate-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.resultado-display {
+    background-color: #f8f9fa;
+    border: 3px dashed var(--color-primario);
+    border-radius: 20px;
+    padding: 40px 20px;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    min-height: 120px; /* Para mantener la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.resultado-display.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/* ======================================================= */
+/* === ESTILOS PARA LA PÁGINA DE SELECTOR DESDE LISTA  === */
+/* ======================================================= */
+
+.selector-lista-content {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.lista-input-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.lista-input-wrapper p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+/* El nuevo contenedor que agrupa textarea y footer */
+.input-box {
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden; /* Clave para que el borde redondeado afecte a los hijos */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de foco en el contenedor cuando el textarea está activo */
+.input-box:focus-within {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.input-box textarea {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 15px;
+    border: none; /* Quitamos el borde del textarea */
+    resize: vertical;
+    outline: none; /* Quitamos el outline al hacer foco */
+    margin-bottom: -5px; /* Pequeño ajuste para unirlo al footer */
+}
+
+/* El nuevo footer dentro de la caja */
+.input-box-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Botón de carga de archivo modificado */
+.file-upload-button {
+    background-color: transparent;
+    color: var(--color-texto);
+    padding: 8px 12px;
+    border: none; /* Quitamos el borde anterior */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.file-upload-button:hover {
+    background-color: #e9ecef;
+    color: var(--color-primario);
+}
+
+/* Contador de participantes modificado */
+.contador {
+    margin: 0; /* Quitamos el margen anterior */
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primario) !important;
+}
+
+/* Botón principal (sin cambios) */
+.select-button {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.select-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.select-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: scale(1);
+}
