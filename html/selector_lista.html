@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector desde Lista - SuertudoApp</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="game-page-body">
+
+    <header class="game-header">
+        <a href="/index.html" class="back-button">← Volver al Inicio</a>
+        <span class="header-logo">SuertudoApp</span>
+    </header>
+
+    <main class="game-container">
+        <h2 id="game-title">Selector desde Lista</h2>
+        
+        <div class="selector-lista-content">
+            <div class="lista-input-wrapper">
+                <p>Pega tu lista o carga un archivo:</p>
+                
+                <div class="input-box">
+                    <textarea id="listaTextarea" rows="10" placeholder="Ana Torres&#10;Carlos Soto&#10;Luisa Pardo&#10;..."></textarea>
+                    
+                    <div class="input-box-footer">
+                        <label for="archivoInput" class="file-upload-button">Cargar archivo (.txt, .csv)</label>
+                        <p id="contadorParticipantes" class="contador">0 participantes detectados</p>
+                    </div>
+                </div>
+
+                <input type="file" id="archivoInput" accept=".txt, .csv" style="display: none;">
+            </div>
+            <div class="accion-wrapper">
+                <button id="botonSeleccionar" class="select-button">¡Seleccionar Ganador!</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="modalGanador" class="modal-oculto">
+        <div class="modal-contenido">
+            <span class="modal-titulo">¡El ganador es!</span>
+            <h3 id="nombreGanador"></h3>
+            <button id="cerrarModal">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="/js/selector_lista.js"></script>
+</body>
+</html>
