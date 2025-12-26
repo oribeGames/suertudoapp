@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuertudoApp - Herramientas de Sorteo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>SuertudoApp</h1>
+        <p>Crea dinámicas al instante: ruletas, números aleatorios y más.</p>
+    </header>
+
+    <main class="tools-container">
+        <div class="card">
+            <h2>Ruleta Personalizada</h2>
+            <p>Crea una ruleta con tus propias opciones y gírala para encontrar un ganador.</p>
+            <button onclick="irARuleta()">Crear Ruleta</button>
+        </div>
+
+        <div class="card">
+            <h2>Número Aleatorio</h2>
+            <p>Genera un número al azar dentro de un rango que tú definas. Ideal para sorteos rápidos.</p>
+            <button onclick="generarNumero()">Generar Número</button>
+        </div>
+
+        <div class="card">
+            <h2>Selector desde Lista</h2>
+            <p>Pega una lista de nombres o participantes y la herramienta elegirá uno al azar.</p>
+            <button onclick="seleccionarDeLista()">Usar Lista</button>
+        </div>
+
+        <div class="card">
+            <h2>Sorteo por Comentarios</h2>
+            <p>Conecta tus redes sociales y realiza un sorteo justo entre los comentarios de una publicación.</p>
+            <button onclick="sorteoPorComentarios()">Iniciar Sorteo</button>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
