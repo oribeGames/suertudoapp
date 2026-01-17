@@ -32,5 +32,5 @@ function seleccionarDeLista() {
  * Redirige a la página de juego para el Sorteo por Comentarios.
  */
 function sorteoPorComentarios() {
-    window.location.href = gamePageURL;
+    window.location.href = '/html/sorteo_comentarios.html';
 }

@@ -632,3 +632,89 @@ body {
     cursor: not-allowed;
     transform: scale(1);
 }
+
+/* Styling for Sorteo por Comentarios page */
+#post-url {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#load-comments-btn,
+#run-giveaway-btn {
+    background-color: #5cb85c; /* Green color, similar to other buttons */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#load-comments-btn:hover,
+#run-giveaway-btn:hover {
+    background-color: #4cae4c;
+}
+
+#load-comments-btn:disabled,
+#run-giveaway-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#comments-display {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    min-height: 100px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#comments-display h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#comments-display ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#comments-display li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+#comments-display li:last-child {
+    border-bottom: none;
+}
+
+#winner-display {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #4cae4c; /* Green border to highlight winner */
+    border-radius: 5px;
+    background-color: #e9f7e9;
+    text-align: center;
+}
+
+#winner-display h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #3c763d; /* Dark green for winner title */
+}
+
+#winner-display p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 5px 0;
+}

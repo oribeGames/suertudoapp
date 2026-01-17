@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests para Sorteo por Comentarios</title>
+    <!-- Include the main HTML structure for elements to be present -->
+</head>
+<body>
+    <h1>Tests para Sorteo por Comentarios</h1>
+    <p>Abre la consola del navegador para ver los resultados de los tests.</p>
+
+    <!-- Minimal DOM elements required by sorteo_comentarios.js -->
+    <input type="text" id="post-url" value="http://example.com/post/123">
+    <button id="load-comments-btn">Cargar Comentarios</button>
+    <div id="comments-display"></div>
+    <button id="run-giveaway-btn">Realizar Sorteo</button>
+    <div id="winner-display"></div>
+
+    <!-- Include the script to be tested -->
+    <script src="../js/sorteo_comentarios.js"></script>
+
+    <!-- Test Script -->
+    <script>
+        console.log('--- Iniciando Tests para Sorteo por Comentarios ---');
+
+        function runTests() {
+            let testsPassed = 0;
+            let testsFailed = 0;
+
+            function assert(condition, message) {
+                if (condition) {
+                    console.log(`✅ PASSED: ${message}`);
+                    testsPassed++;
+                } else {
+                    console.error(`❌ FAILED: ${message}`);
+                    testsFailed++;
+                }
+            }
+
+            // Test 1: Initial state of buttons
+            console.log('\n--- Test Suite 1: Initial State ---');
+            const loadBtn = document.getElementById('load-comments-btn');
+            const runBtn = document.getElementById('run-giveaway-btn');
+            assert(!loadBtn.disabled, 'El botón "Cargar Comentarios" debería estar habilitado inicialmente.');
+            assert(runBtn.disabled, 'El botón "Realizar Sorteo" debería estar deshabilitado inicialmente.');
+
+            // Test 2: Loading comments
+            console.log('\n--- Test Suite 2: Carga de Comentarios ---');
+            loadBtn.click(); // Simulate click
+            const commentsDisplay = document.getElementById('comments-display');
+            assert(commentsDisplay.innerHTML.includes('Comentarios Cargados'), 'Debería mostrarse "Comentarios Cargados".');
+            assert(commentsDisplay.querySelectorAll('li').length === 5, 'Deberían cargarse 5 comentarios (mock).');
+            assert(loadBtn.disabled, 'El botón "Cargar Comentarios" debería deshabilitarse después de cargar.');
+            assert(!runBtn.disabled, 'El botón "Realizar Sorteo" debería habilitarse después de cargar comentarios.');
+            assert(document.getElementById('post-url').disabled, 'El input de URL debería deshabilitarse después de cargar.');
+
+
+            // Test 3: Selecting a winner
+            console.log('\n--- Test Suite 3: Selección de Ganador ---');
+            runBtn.click(); // Simulate click
+            const winnerDisplay = document.getElementById('winner-display');
+            assert(winnerDisplay.innerHTML.includes('¡El Ganador es!'), 'Debería mostrarse el título del ganador.');
+            // Check if a user is displayed (presence of "Usuario")
+            assert(winnerDisplay.innerHTML.includes('Usuario'), 'Debería mostrarse un nombre de usuario ganador.');
+            assert(runBtn.disabled, 'El botón "Realizar Sorteo" debería deshabilitarse después del sorteo.');
+
+            // Test 4: Attempting to run giveaway without comments (requires resetting state, harder to do without full framework)
+            // For simplicity, we'll skip this direct test here, but the logic is in the main script.
+            // We can manually test this by reloading and trying to click "Realizar Sorteo" before "Cargar Comentarios".
+
+            console.log('\n--- Resumen de Tests ---');
+            console.log(`Total Pruebas: ${testsPassed + testsFailed}`);
+            console.log(`Pasadas: ${testsPassed}`);
+            console.log(`Falladas: ${testsFailed}`);
+
+            if (testsFailed === 0) {
+                console.log('%c¡Todos los tests pasaron!', 'color: green; font-weight: bold;');
+            } else {
+                console.error('%cAlgunos tests fallaron.', 'color: red; font-weight: bold;');
+            }
+        }
+
+        // Run tests when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>
